@@ -1,0 +1,87 @@
+  <!-- quote-area -->
+        <div class="quote-area pt-100">
+            <div class="quote-wrap" style="background-image: url(assets/img/quote/01.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 ms-auto">
+                            <div class="quote-content">
+                                <div class="quote-head">
+                                    <h3>Request A Quote</h3>
+                                    <p>Fill the form below to get a free consultation and project estimate within 24 hours from Chennai’s most trusted construction company.</p>
+                                </div>
+                                <div class="quote-form">
+                                      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                    <div class="row">
+                                        
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <div class="form-icon">
+                                                    <i class="far fa-user-tie"></i>
+                                                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }"  placeholder="Name" />
+                                                    @if (submitted && f['lastName'].errors) {
+                                                    <div class="invalid-feedback">
+                                                        @if (f['lastName'].errors['required']) {
+                                                        <div>Last Name is required</div>
+                                                        }
+                                                    </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <div class="form-icon">
+                                                    <i class="far fa-user-tie"></i>
+                                                    <input type="text" formControlName="phoneNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['phoneNo'].errors }"  placeholder="Phone Number" maxlength="10" />
+                                                    @if (submitted && f['phoneNo'].errors) {
+                                                    <div class="invalid-feedback">
+                                                        @if (f['phoneNo'].errors['required']) {
+                                                        <div>Phone Number is required</div>
+                                                        }
+                                                    </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 quote-email" >   
+                                            <div class="form-group">
+                                                <div class="form-icon">
+                                                    <i class="far fa-envelope"></i>
+                                                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" placeholder="Email" />
+                                                    @if (submitted && f['email'].errors) {
+                                                    <div class="invalid-feedback">
+                                                        @if (f['email'].errors['required']) {
+                                                        <div>Email is required</div>
+                                                        } @if (f['email'].errors['email']) {
+                                                        <div>Email is invalid</div>
+                                                        }
+                                                    </div>
+                                                    }
+                                                </div>
+                                            </div>            
+                                        
+                                        </div>   
+                                        
+                                    <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="form-icon">
+                                                    <i class="far fa-comment-lines"></i>
+                                                    <textarea class="form-control quote-mess" formControlName="message" cols="30" rows="4" placeholder="Your Message"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="theme-btn">Request Quote <i class="far fa-paper-plane"></i></button>
+                                    </div>
+               
+                                 </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- quote-area end -->
